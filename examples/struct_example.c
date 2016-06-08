@@ -1,9 +1,9 @@
 /*
  * Simple Struct example with CN_Lists
  * 
- * CN_Lists hold any datatype as long as the size specified an initialization.
+ * CN_Lists hold any datatype as long as the size specified on initialization.
  * It also copies the bytes of a struct into the list. Hence what we will
- * demonstrate in thye code below.
+ * demonstrate in the code below.
  * 
  * This application will make a struct, set some values, push it to the list.
  * Afterwards, it will modify that struct, then push another copy. Then print
