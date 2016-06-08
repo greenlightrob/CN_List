@@ -1,7 +1,13 @@
 /*
  * Simple Struct example with CN_Lists
  * 
- * CN_Lists hold any datatype as long as the size specified is the same as what you store in it.
+ * CN_Lists hold any datatype as long as the size specified an initialization.
+ * It also copies the bytes of a struct into the list. Hence what we will
+ * demonstrate in thye code below.
+ * 
+ * This application will make a struct, set some values, push it to the list.
+ * Afterwards, it will modify that struct, then push another copy. Then print
+ * out the values of the two structs to stdout.
  */
 
 #include <stdio.h>
@@ -20,12 +26,12 @@ main() {
 	a.a = 2;
 	a.b = 3;
 
-	cn_list_push_back(list, &a); //Push a copy of a to list
+	cn_list_push_back(list, &a); //Push a copy of "a" to list
 
 	//Update the original struct
 	a.a++;
 	a.b = a.a + a.b;
-	cn_list_push_back(list, &a); //Push another copy of a to list
+	cn_list_push_back(list, &a); //Push another copy of "a" to list
 	
 	CNL_ITERATOR ii = 0; //Iterator
 	THING* iii;          //This is an iterator too.
